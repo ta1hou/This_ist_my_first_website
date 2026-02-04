@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roselia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="text-center">Roselia <img id="icon" src="material/star.png" alt="Roselia Icon"></h1>
+            <nav>
+                <ol class="list-group list-group-horizontal justify-content-center">
+                    <li class="list-group-item"><a class="text-white" href="#background">Описание</a></li>
+                    <li class="list-group-item"><a class="text-white" href="#music">Песни</a></li>
+                    <li class="list-group-item"><a class="text-white" href="#facts">Интересные факты</a></li>
+                    <li class="list-group-item"><a class="text-white" href="#photo">Галерея</a></li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <p class="text-center">Roselia - это женская группа в BanG Dream!. Группа состоит из пяти участниц, а именно: Минато Юкина на вокале, Хикава Сайо на гитаре, Удагава Если на барабанах, Широканэ Ринко на клавишных и Имаи Риса на басу. Они дебютировали с песней BLACK SHOUT.</p>
+        
+        <div class="my-4" id="background">
+            <h2>★ Описание</h2>
+            <p>Это популярная готическая джей-рок-группа, которая признана на почти профессиональном уровне и привлекает внимание музыкальной индустрии.
+                Очень талантливая группа. С их умелыми выступлениями и вокалом профессионального уровня, они являются высоко оцененной группой. 
+                Вокалистка Юкина основала группу с определенной целью. Другие участники - единомышленница Сайо, подруга детства Риса, самая младшая и талантливая Если и Ринко с наградами. 
+                Они играют в известном концертном зале и надеются когда-нибудь попасть на большую сцену.</p>
+        </div>
+        
+        <div class="my-4" id="music">
+            <h2>★ Песни</h2>
+            
+            <!-- Встроенный видео плеер -->
+            <div id="video-player" class="video-container">
+                <div class="video-wrapper">
+                    <iframe id="videoFrame" src="" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div id="songs-container" class="music row">
+                <!-- Песни будут загружены динамически -->
+            </div>
+            
+            <div id="album-container">
+                <!-- Картинка альбома будет загружена динамически -->
+            </div>
+        </div>
+        
+        <div class="my-4" id="facts">
+            <h2>★ Интересные факты</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Название Roselia было придумано от сочетания слов Rose (Роза) и Camellia (Камелия).</li>
+                <li class="list-group-item">Их фамилии (Минато, Хикава, Имаи, Удагава и Широкане) основаны на названиях районов города Минато.</li>
+                <li class="list-group-item">По словам Юкины, участницы группы практикуются вместе 8 раз в неделю и, возможно, даже чаще в свободное время.</li>
+                <li class="list-group-item">8 марта 2020 года реальная Roselia получила награду за пение на 14-й церемонии вручения премии Seiyuu Awards. В настоящее время они являются единственной группой во франшизе, которая достигла этого.</li>
+                <li class="list-group-item">После Sprechchor группа становится связанной с агентством, а Харуми становится их менеджером.</li>
+                <li class="list-group-item">Инструменты Roselia созданы по образцу реальных инструментов из реального мира.</li>
+            </ul>
+        </div>
+        
+        <div class="my-4" id="photo">
+            <h2>★ Галерея</h2>
+            <div id="gallery-container" class="gallery-scroll-container">
+                <div class="gallery-loading">Загрузка изображений...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="bg-dark text-white py-3">
+            <div class="container text-center">
+                <p>© 2024 Roselia Fan Site | Все права защищены.</p>
+                <p>Создано с любовью для фанатов Roselia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal">
+        <span class="close-modal">&times;</span>
+        <img id="galleryModalImage" src="" alt="Full screen">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
