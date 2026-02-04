@@ -1,4 +1,4 @@
-BLACK SHOUT|https://www.youtube.com/watch?v=ALXxQffcZOk
+BLACK SHOUT|
 LOUDER|https://www.youtube.com/watch?v=example1
 Re:birth day|https://www.youtube.com/watch?v=example2
 Hidamari Rhodonite|https://www.youtube.com/watch?v=example3
@@ -11,8 +11,8 @@ Kiseki|https://www.youtube.com/watch?v=example9
 Neo-Aspect|https://www.youtube.com/watch?v=example10
 Legendary|https://www.youtube.com/watch?v=example11
 R|https://www.youtube.com/watch?v=example12
-Sanctuary|https://www.youtube.com/watch?v=example13
-BRAVE JEWEL|https://www.youtube.com/watch?v=example14
+Sanctuary|https://www.youtube.com/watch?v=LAPLzxHzaHY&list=OLAK5uy_l4POhiTC2O4dUL2j-ne85z6MoNnpb4-i4&index=2
+BRAVE JEWEL|https://www.youtube.com/watch?v=MHXRfiufs2o&list=OLAK5uy_l4POhiTC2O4dUL2j-ne85z6MoNnpb4-i4
 PASSIONATE ANTHEM|https://www.youtube.com/watch?v=example15
 Safe and Sound|https://www.youtube.com/watch?v=example16
 Ringing Bloom|https://www.youtube.com/watch?v=example17
