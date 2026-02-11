@@ -1,6 +1,6 @@
 const header = document.querySelector('header');
 const sections = document.querySelectorAll("div[id]");
-const navLinks = document.querySelectorAll("nav a");
+const navLinks = document.querySelectorAll(".side-nav a");
 const videoPlayer = document.getElementById('video-player');
 const videoFrame = document.getElementById('videoFrame');
 const songsContainer = document.getElementById('songs-container');
@@ -53,7 +53,7 @@ async function loadSongs() {
                         li.setAttribute('data-video', song.video);
                         li.innerHTML = `
                             <span class="song-title">${song.title}</span>
-                            <span class="play-icon">▶</span>
+                            <span class="play-icon">💿</span>
                         `;
                         
                         // Обработчик клика для открытия видео
@@ -178,7 +178,7 @@ window.addEventListener("scroll", () => {
     sections.forEach((section) => {
         if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
             navLinks.forEach((link) => link.classList.remove("active"));
-            const activeLink = document.querySelector(`nav a[href="#${section.id}"]`);
+            const activeLink = document.querySelector(`.side-nav a[href="#${section.id}"]`);
             if (activeLink) activeLink.classList.add("active");
         }
     });
