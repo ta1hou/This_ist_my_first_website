@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     padding-top: 90px; /* Отступ для фиксированной шапки */
-    padding-right: 90px; /* Отступ для боковой навигации */
+    padding-right: 80px; /* Отступ для узкой навигации */
     scroll-behavior: smooth;
 }
 
@@ -57,20 +57,25 @@ header #icon {
     transition: all 0.4s ease;
 }
 
-/* ---------- Боковая навигация справа ---------- */
+/* ---------- Боковая навигация справа (стиль манга) ---------- */
 .side-nav {
     position: fixed;
-    top: 90px;
+    top: 0;
     right: 0;
-    width: 80px;
-    height: calc(100vh - 90px);
-    background-color: rgba(25, 25, 35, 0.95);
-    backdrop-filter: blur(8px);
-    border-left: 1px solid rgba(255,255,255,0.05);
+    width: 70px;
+    height: 100vh;
+    background: #f5f5dc;
+    border-left: 3px solid #2a2a2a;
+    box-shadow: -8px 0 15px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999;
+    z-index: 1001;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.side-nav:hover {
+    width: 200px;
 }
 
 .side-nav ul {
@@ -79,39 +84,63 @@ header #icon {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    align-items: center;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 10px;
 }
 
 .side-nav li {
     margin: 0;
+    width: 100%;
 }
 
 .side-nav a {
-    width: 45px;
-    height: 45px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    border-radius: 12px;
-    color: #aaa;
+    justify-content: flex-start;
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: #2a2a2a;
     text-decoration: none;
     transition: all 0.3s ease;
-    background-color: rgba(255,255,255,0.05);
+    position: relative;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* Вертикальная линия слева */
 .side-nav a::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3px;
-    height: 0%;
-    background: linear-gradient(180deg, #ff77cc, #7799ff);
-    border-radius: 2px;
+    top: 0;
+    width: 4px;
+    height: 0;
+    background: #2a2a2a;
     transition: height 0.3s ease;
+}
+
+/* Чернильный эффект при наведении */
+.side-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(42, 42, 42, 0.05) 0px,
+        rgba(42, 42, 42, 0.05) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    transition: width 0.4s ease;
+    z-index: -1;
 }
 
 .side-nav a:hover::before,
@@ -119,15 +148,71 @@ header #icon {
     height: 100%;
 }
 
+.side-nav a:hover::after {
+    width: 100%;
+}
+
 .side-nav a:hover {
-    background: linear-gradient(135deg, #ff77cc, #7799ff);
-    color: white;
-    transform: scale(1.1);
+    background: rgba(42, 42, 42, 0.03);
+    padding-left: 20px;
 }
 
 .side-nav a.active {
-    background: linear-gradient(135deg, #ff77cc, #7799ff);
-    color: white;
+    background: rgba(42, 42, 42, 0.08);
+    border-left: 4px solid #2a2a2a;
+}
+
+/* Сокращенное название (всегда видимое) */
+.side-nav a .nav-short {
+    display: inline-block;
+    min-width: 35px;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+/* Полное название (раскрывается при наведении) */
+.side-nav a .nav-full {
+    display: inline-block;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease 0.1s;
+    margin-left: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.side-nav:hover a .nav-full,
+.side-nav a:hover .nav-full {
+    max-width: 200px;
+    opacity: 1;
+    margin-left: 8px;
+}
+
+/* Текстурный эффект бумаги */
+.side-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.02) 2px,
+            rgba(0, 0, 0, 0.02) 4px
+        );
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Эффект чернил на активной кнопке */
+.side-nav a.active::before {
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
 }
 
 /* ---------- Списки песен / кнопки ---------- */
@@ -354,15 +439,14 @@ header #icon {
 }
 
 .gallery-item {
-    width: 280px;          /* ширина как у YouTube */
-    aspect-ratio: 16 / 9;  /* формат превью */
+    width: 280px;
+    aspect-ratio: 16 / 9;
     flex-shrink: 0;
 }
 
-
 .gallery-item img {
-    height: 160px;              /* как у YouTube превью */
-    width: auto;
+    height: 160px;
+    width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 8px;
@@ -370,7 +454,6 @@ header #icon {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
 }
-
 
 .gallery-item img:hover {
     transform: scale(1.04);
@@ -509,6 +592,8 @@ header.scrolled #icon {
 @media (max-width: 768px) {
     body {
         padding-top: 80px;
+        padding-right: 0;
+        padding-bottom: 80px;
     }
     
     header h1 {
@@ -522,24 +607,35 @@ header.scrolled #icon {
         bottom: 0;
         right: 0;
         left: 0;
-        transform: none;
-        border-radius: 20px 20px 0 0;
+        width: 100%;
+        height: 70px;
+        border-left: none;
+        border-top: 3px solid #2a2a2a;
         padding: 15px;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .side-nav:hover {
+        width: 100%;
+        height: 70px;
     }
     
     .side-nav ul {
         flex-direction: row;
         justify-content: space-around;
         gap: 5px;
+        padding-left: 0;
     }
     
     .side-nav a {
         padding: 8px 10px;
         font-size: 0.75rem;
+        flex-direction: column;
+        text-align: center;
     }
     
     .side-nav a::before {
-        width: 0%;
+        width: 0;
         height: 3px;
         top: 0;
         left: 50%;
@@ -556,6 +652,14 @@ header.scrolled #icon {
     .side-nav a.active {
         padding-left: 10px;
         padding-top: 12px;
+    }
+    
+    .side-nav a .nav-full {
+        display: none;
+    }
+    
+    .side-nav a .nav-short {
+        font-size: 0.8rem;
     }
     
     .video-container.active {
