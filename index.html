@@ -9,107 +9,225 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Serif+JP:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
 </head>
 <body>
 
-    <!-- Header -->
+    <div class="scanlines"></div>
+
+    <!-- ══════════════════════════════════════
+         HEADER
+    ══════════════════════════════════════ -->
     <header>
         <div class="container">
             <h1 class="text-center">Roselia <img id="icon" src="material/star.png" alt="Roselia Icon"></h1>
         </div>
     </header>
 
-    <!-- Side Navigation -->
+    <!-- ══════════════════════════════════════
+         SIDE NAVIGATION — manga page-flip
+         Icons: gothic cross / music note / quill / rose frame
+    ══════════════════════════════════════ -->
     <nav class="side-nav">
+        <div class="side-nav-texture"></div>
+        <div class="side-nav-title">ROSELIA</div>
+
         <ul>
-            <li>
+            <!-- OP · Gothic arch / scroll icon for "description" -->
+            <li data-chapter="01">
                 <a href="#background">
-                    <span class="link-fill"></span>
-                    <span class="link-bar"></span>
-                    <span class="nav-short">OP</span>
-                    <span class="nav-full">Описание</span>
+                    <div class="page-front">
+                        <div class="nav-icon">
+                            <!-- Gothic arch with cross — "origin / lore" -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2 C8 2 5 5.5 5 9.5 C5 13 7 15.5 9.5 17 L9.5 21 L14.5 21 L14.5 17 C17 15.5 19 13 19 9.5 C19 5.5 16 2 12 2 Z"/>
+                                <line x1="12" y1="11" x2="12" y2="17"/>
+                                <line x1="9.5" y1="13" x2="14.5" y2="13"/>
+                                <circle cx="12" cy="8" r="1.5" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="page-back">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2 C8 2 5 5.5 5 9.5 C5 13 7 15.5 9.5 17 L9.5 21 L14.5 21 L14.5 17 C17 15.5 19 13 19 9.5 C19 5.5 16 2 12 2 Z"/>
+                                <line x1="12" y1="11" x2="12" y2="17"/>
+                                <line x1="9.5" y1="13" x2="14.5" y2="13"/>
+                                <circle cx="12" cy="8" r="1.5" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="nav-label">Описание</span>
+                    </div>
                 </a>
             </li>
-            <li>
+
+            <!-- MU · Musical note with gothic serifs -->
+            <li data-chapter="02">
                 <a href="#music">
-                    <span class="link-fill"></span>
-                    <span class="link-bar"></span>
-                    <span class="nav-short">MU</span>
-                    <span class="nav-full">Песни</span>
+                    <div class="page-front">
+                        <div class="nav-icon">
+                            <!-- Double music note -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 17 C9 18.66 7.66 20 6 20 C4.34 20 3 18.66 3 17 C3 15.34 4.34 14 6 14 C6.55 14 7.08 14.16 7.52 14.44 L7.52 7 L18 5 L18 12.44 C18.44 12.16 18.97 12 19.52 12 L21 12 C21 13.66 19.66 15 18 15 C16.34 15 15 13.66 15 12 L15 7.2 L9 8.6 Z"/>
+                                <line x1="9" y1="8.6" x2="9" y2="14.44"/>
+                                <!-- Gothic spike top -->
+                                <path d="M9 4 L10 5.5 L9 7 L8 5.5 Z" fill="currentColor"/>
+                                <path d="M18 2 L19 3.5 L18 5 L17 3.5 Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="page-back">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 17 C9 18.66 7.66 20 6 20 C4.34 20 3 18.66 3 17 C3 15.34 4.34 14 6 14 C6.55 14 7.08 14.16 7.52 14.44 L7.52 7 L18 5 L18 12.44 C18.44 12.16 18.97 12 19.52 12 L21 12 C21 13.66 19.66 15 18 15 C16.34 15 15 13.66 15 12 L15 7.2 L9 8.6 Z"/>
+                                <line x1="9" y1="8.6" x2="9" y2="14.44"/>
+                                <path d="M9 4 L10 5.5 L9 7 L8 5.5 Z" fill="currentColor"/>
+                                <path d="M18 2 L19 3.5 L18 5 L17 3.5 Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="nav-label">Песни</span>
+                    </div>
                 </a>
             </li>
-            <li>
+
+            <!-- FC · Gothic star / pentagram for "facts" -->
+            <li data-chapter="03">
                 <a href="#facts">
-                    <span class="link-fill"></span>
-                    <span class="link-bar"></span>
-                    <span class="nav-short">FC</span>
-                    <span class="nav-full">Факты</span>
+                    <div class="page-front">
+                        <div class="nav-icon">
+                            <!-- Gothic 5-point star with inner ring -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="12,2 14.9,9.2 22.5,9.2 16.3,13.8 18.5,21 12,16.6 5.5,21 7.7,13.8 1.5,9.2 9.1,9.2"/>
+                                <!-- Inner ornament cross -->
+                                <line x1="12" y1="7" x2="12" y2="15"/>
+                                <line x1="8.5" y1="11" x2="15.5" y2="11"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="page-back">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="12,2 14.9,9.2 22.5,9.2 16.3,13.8 18.5,21 12,16.6 5.5,21 7.7,13.8 1.5,9.2 9.1,9.2"/>
+                                <line x1="12" y1="7" x2="12" y2="15"/>
+                                <line x1="8.5" y1="11" x2="15.5" y2="11"/>
+                            </svg>
+                        </div>
+                        <span class="nav-label">Факты</span>
+                    </div>
                 </a>
             </li>
-            <li>
+
+            <!-- PH · Gothic rose frame for "gallery" -->
+            <li data-chapter="04">
                 <a href="#photo">
-                    <span class="link-fill"></span>
-                    <span class="link-bar"></span>
-                    <span class="nav-short">PH</span>
-                    <span class="nav-full">Галерея</span>
+                    <div class="page-front">
+                        <div class="nav-icon">
+                            <!-- Rose with petals — gothic style -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Stem -->
+                                <line x1="12" y1="17" x2="12" y2="22"/>
+                                <!-- Thorns -->
+                                <path d="M12 20 L9 18" stroke-linecap="round"/>
+                                <path d="M12 19 L15 17.5" stroke-linecap="round"/>
+                                <!-- Petals (outer) -->
+                                <path d="M12 4 C10 4 8 6 8 8 C8 6 6 4.5 5.5 6.5 C5 8.5 7 10 9 10 C7 11 5 13 7 14.5 C9 16 11 14 12 12"/>
+                                <path d="M12 4 C14 4 16 6 16 8 C16 6 18 4.5 18.5 6.5 C19 8.5 17 10 15 10 C17 11 19 13 17 14.5 C15 16 13 14 12 12"/>
+                                <!-- Center bud -->
+                                <ellipse cx="12" cy="9" rx="2.5" ry="3"/>
+                                <!-- Inner petal hint -->
+                                <path d="M10.5 8 Q12 6.5 13.5 8" fill="none"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="page-back">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="12" y1="17" x2="12" y2="22"/>
+                                <path d="M12 20 L9 18" stroke-linecap="round"/>
+                                <path d="M12 19 L15 17.5" stroke-linecap="round"/>
+                                <path d="M12 4 C10 4 8 6 8 8 C8 6 6 4.5 5.5 6.5 C5 8.5 7 10 9 10 C7 11 5 13 7 14.5 C9 16 11 14 12 12"/>
+                                <path d="M12 4 C14 4 16 6 16 8 C16 6 18 4.5 18.5 6.5 C19 8.5 17 10 15 10 C17 11 19 13 17 14.5 C15 16 13 14 12 12"/>
+                                <ellipse cx="12" cy="9" rx="2.5" ry="3"/>
+                                <path d="M10.5 8 Q12 6.5 13.5 8" fill="none"/>
+                            </svg>
+                        </div>
+                        <span class="nav-label">Галерея</span>
+                    </div>
                 </a>
             </li>
         </ul>
+
         <div class="side-nav-bottom">✿</div>
-        <div class="side-nav-deco"></div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- ══════════════════════════════════════
+         MAIN CONTENT
+    ══════════════════════════════════════ -->
     <div class="container">
 
-        <p class="text-center">Roselia — женская группа в BanG Dream!. Группа состоит из пяти участниц: Минато Юкина на вокале, Хикава Сайо на гитаре, Удагава Если на барабанах, Широканэ Ринко на клавишных и Имаи Риса на басу. Они дебютировали с песней BLACK SHOUT.</p>
+        <p class="text-center" style="position:relative;">
+            <span class="text-intro-border"></span>
+            Roselia — женская группа в BanG Dream!. Состоит из пяти участниц: Минато Юкина на вокале, Хикава Сайо на гитаре, Удагава Если на барабанах, Широканэ Ринко на клавишных и Имаи Риса на басу. Дебют — песня BLACK SHOUT.
+        </p>
 
-        <div class="my-4" id="background">
+        <div class="my-4 bio-card" id="background">
             <h2>★ Описание</h2>
-            <p>Это популярная готическая джей-рок-группа, которая признана на почти профессиональном уровне и привлекает внимание музыкальной индустрии. Очень талантливая группа. С их умелыми выступлениями и вокалом профессионального уровня, они являются высоко оцененной группой. Вокалистка Юкина основала группу с определённой целью. Другие участники — единомышленница Сайо, подруга детства Риса, самая младшая и талантливая Если и Ринко с наградами. Они играют в известном концертном зале и надеются когда-нибудь попасть на большую сцену.</p>
+            <p>Это популярная готическая джей-рок-группа, признанная на почти профессиональном уровне. Вокалистка Юкина основала группу с определённой целью. Другие участники — единомышленница Сайо, подруга детства Риса, самая младшая и талантливая Если, и Ринко с наградами. Они играют в известном концертном зале и надеются когда-нибудь попасть на большую сцену.</p>
         </div>
 
-        <div class="my-4" id="music">
+        <div class="my-4 bio-card" id="music">
             <h2>★ Песни</h2>
 
-            <!-- Video player -->
             <div id="video-player" class="video-container">
                 <div class="video-wrapper">
                     <iframe id="videoFrame" src="" allowfullscreen></iframe>
                 </div>
             </div>
 
-            <div id="songs-container" class="music row">
-                <!-- dynamically loaded -->
-            </div>
+            <div id="songs-container" class="music row"></div>
 
-            <div id="album-container">
-                <!-- dynamically loaded -->
-            </div>
+            <div id="album-container"></div>
         </div>
 
-        <div class="my-4" id="facts">
+        <div class="my-4 bio-card" id="facts">
             <h2>★ Интересные факты</h2>
             <ul class="list-group">
-                <li class="list-group-item" data-num="01">Название Roselia было придумано от сочетания слов Rose (Роза) и Camellia (Камелия).</li>
-                <li class="list-group-item" data-num="02">Их фамилии (Минато, Хикава, Имаи, Удагава и Широкане) основаны на названиях районов города Минато.</li>
-                <li class="list-group-item" data-num="03">По словам Юкины, участницы группы практикуются вместе 8 раз в неделю и, возможно, даже чаще в свободное время.</li>
-                <li class="list-group-item" data-num="04">8 марта 2020 года реальная Roselia получила награду за пение на 14-й церемонии вручения премии Seiyuu Awards. В настоящее время они являются единственной группой во франшизе, которая достигла этого.</li>
-                <li class="list-group-item" data-num="05">После Sprechchor группа становится связанной с агентством, а Харуми становится их менеджером.</li>
-                <li class="list-group-item" data-num="06">Инструменты Roselia созданы по образцу реальных инструментов из реального мира.</li>
+                <li class="list-group-item" data-num="01">
+                    <span class="fact-border"></span>
+                    Название Roselia придумано от сочетания слов Rose (Роза) и Camellia (Камелия).
+                </li>
+                <li class="list-group-item" data-num="02">
+                    <span class="fact-border"></span>
+                    Фамилии участниц основаны на названиях районов города Минато.
+                </li>
+                <li class="list-group-item" data-num="03">
+                    <span class="fact-border"></span>
+                    По словам Юкины, участницы практикуются вместе 8 раз в неделю и, возможно, даже чаще.
+                </li>
+                <li class="list-group-item" data-num="04">
+                    <span class="fact-border"></span>
+                    8 марта 2020 года Roselia получила награду за пение на 14-й церемонии премии Seiyuu Awards — единственная группа во франшизе, достигшая этого.
+                </li>
+                <li class="list-group-item" data-num="05">
+                    <span class="fact-border"></span>
+                    После Sprechchor группа связывается с агентством, а Харуми становится их менеджером.
+                </li>
+                <li class="list-group-item" data-num="06">
+                    <span class="fact-border"></span>
+                    Инструменты Roselia созданы по образцу реальных инструментов из реального мира.
+                </li>
             </ul>
         </div>
 
-        <div class="my-4" id="photo">
+        <div class="my-4 bio-card" id="photo">
             <h2>★ Галерея</h2>
-            <div id="gallery-container" class="gallery-scroll-container">
+            <div id="gallery-container">
                 <div class="gallery-loading">// загрузка изображений...</div>
             </div>
         </div>
 
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="bg-dark text-white py-3">
             <div class="container text-center">
@@ -118,10 +236,13 @@
         </div>
     </footer>
 
-    <!-- Gallery Modal -->
+    <!-- Modal Lightbox -->
     <div id="galleryModal" class="gallery-modal">
         <span class="close-modal">&times;</span>
+        <button class="modal-nav modal-nav-prev" id="modalPrev">&#8249;</button>
         <img id="galleryModalImage" src="" alt="Full screen">
+        <button class="modal-nav modal-nav-next" id="modalNext">&#8250;</button>
+        <div class="modal-strip" id="modalStrip"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
